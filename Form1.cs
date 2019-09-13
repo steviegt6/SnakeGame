@@ -35,7 +35,7 @@ namespace Snake
 
             // Create new player object
             Snake.Clear();
-            Circle head = new Circle {X = 10, Y = 5};
+            Circle head = new Circle { X = 10, Y = 5 };
             Snake.Add(head);
 
 
@@ -51,7 +51,7 @@ namespace Snake
             int maxYPos = pbCanvas.Size.Height / Settings.Height;
 
             Random random = new Random();
-            food = new Circle {X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos)};
+            food = new Circle { X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos) };
         }
 
 
@@ -107,7 +107,7 @@ namespace Snake
                                       Snake[i].Y * Settings.Height,
                                       Settings.Width, Settings.Height));
 
-                    if (Settings.Score >=500)
+                    if (Settings.Score >= 500)
                     {
                         // Draw Food
                         canvas.FillEllipse(Brushes.Orange,
@@ -204,7 +204,7 @@ namespace Snake
         {
             Input.ChangeState(e.KeyCode, false);
         }
-        
+
         private void AddCircle(int amount)
         {
             // Add circle to body
@@ -213,7 +213,7 @@ namespace Snake
                 X = Snake[Snake.Count - 1].X,
                 Y = Snake[Snake.Count - 1].Y
             };
-            
+
             for (int i = 0; i < amount; i++)
             {
                 Snake.Add(circle);

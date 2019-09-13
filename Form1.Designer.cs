@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -90,7 +89,7 @@
             this.versionNumber.Name = "versionNumber";
             this.versionNumber.Size = new System.Drawing.Size(71, 25);
             this.versionNumber.TabIndex = 4;
-            this.versionNumber.Text = "v1.0.1";
+            this.versionNumber.Text = "v1.0.2";
             // 
             // label3
             // 
@@ -108,9 +107,10 @@
             this.updates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updates.Location = new System.Drawing.Point(14, 612);
             this.updates.Name = "updates";
-            this.updates.Size = new System.Drawing.Size(631, 125);
+            this.updates.Size = new System.Drawing.Size(315, 75);
             this.updates.TabIndex = 6;
-            this.updates.Text = resources.GetString("updates.Text");
+            this.updates.Text = "(Ported from valk\'s pull request)\r\nCleaned up internal comments.\r\nFixed food draw" +
+    "ing bug.\r\n";
             // 
             // Form1
             // 
