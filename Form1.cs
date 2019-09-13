@@ -204,40 +204,36 @@ namespace Snake
         {
             Input.ChangeState(e.KeyCode, false);
         }
+        
+        private void AddCircle(int amount)
+        {
+            // Add circle to body
+            Circle circle = new Circle
+            {
+                X = Snake[Snake.Count - 1].X,
+                Y = Snake[Snake.Count - 1].Y
+            };
+            
+            for (int i = 0; i < amount; i++)
+            {
+                Snake.Add(circle);
+            }
+
+            // Update Score
+            Settings.Score += Settings.Points;
+            lblScore.Text = Settings.Score.ToString();
+        }
 
         private void Eat()
         {
             if (Settings.Score >= 250)
             {
-                // Add circle to body
-                Circle circle = new Circle
-                {
-                    X = Snake[Snake.Count - 1].X,
-                    Y = Snake[Snake.Count - 1].Y
-                };
-                Snake.Add(circle);
-                Snake.Add(circle);
-
-                //Update Score
-                Settings.Score += Settings.Points * 2;
-                lblScore.Text = Settings.Score.ToString();
-
+                AddCircle(2);
                 GenerateFood();
             }
             else
             {
-                // Add circle to body
-                Circle circle = new Circle
-                {
-                    X = Snake[Snake.Count - 1].X,
-                    Y = Snake[Snake.Count - 1].Y
-                };
-                Snake.Add(circle);
-
-                // Update Score
-                Settings.Score += Settings.Points;
-                lblScore.Text = Settings.Score.ToString();
-
+                AddCircle(1);
                 GenerateFood();
             }
         }
