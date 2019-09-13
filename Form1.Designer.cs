@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -45,17 +46,16 @@
             this.pbCanvas.BackColor = System.Drawing.Color.OliveDrab;
             this.pbCanvas.Location = new System.Drawing.Point(12, 12);
             this.pbCanvas.Name = "pbCanvas";
-            this.pbCanvas.Size = new System.Drawing.Size(748, 778);
+            this.pbCanvas.Size = new System.Drawing.Size(602, 535);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
-            this.pbCanvas.Click += new System.EventHandler(this.PbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1230, 12);
+            this.label1.Location = new System.Drawing.Point(620, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 37);
             this.label1.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(1354, 12);
+            this.lblScore.Location = new System.Drawing.Point(718, 12);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(88, 37);
             this.lblScore.TabIndex = 2;
@@ -81,39 +81,36 @@
             this.lblGameOver.TabIndex = 3;
             this.lblGameOver.Text = "label2";
             this.lblGameOver.Visible = false;
-            this.lblGameOver.Click += new System.EventHandler(this.LblGameOver_Click);
             // 
             // versionNumber
             // 
             this.versionNumber.AutoSize = true;
             this.versionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.versionNumber.Location = new System.Drawing.Point(766, 9);
+            this.versionNumber.Location = new System.Drawing.Point(12, 550);
             this.versionNumber.Name = "versionNumber";
             this.versionNumber.Size = new System.Drawing.Size(71, 25);
             this.versionNumber.TabIndex = 4;
-            this.versionNumber.Text = "v1.0.0";
+            this.versionNumber.Text = "v1.0.1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(766, 34);
+            this.label3.Location = new System.Drawing.Point(12, 575);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(181, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "Changelog:";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // updates
             // 
             this.updates.AutoSize = true;
             this.updates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updates.Location = new System.Drawing.Point(768, 71);
+            this.updates.Location = new System.Drawing.Point(14, 612);
             this.updates.Name = "updates";
-            this.updates.Size = new System.Drawing.Size(425, 75);
+            this.updates.Size = new System.Drawing.Size(631, 125);
             this.updates.TabIndex = 6;
-            this.updates.Text = "Nothing special.\r\nSimply followed a C# snake tutorial.\r\nExpect frequent updates f" +
-    "rom random stuff!";
+            this.updates.Text = resources.GetString("updates.Text");
             // 
             // Form1
             // 

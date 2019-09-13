@@ -107,11 +107,20 @@ namespace Snake
                                       Snake[i].Y * Settings.Height,
                                       Settings.Width, Settings.Height));
 
-
-                    //Draw Food
-                    canvas.FillEllipse(Brushes.Orange,
-                        new Rectangle(food.X * Settings.Width,
-                             food.Y * Settings.Height, Settings.Width, Settings.Height));
+                    if (Settings.Score >=500)
+                    {
+                        //Draw Food
+                        canvas.FillEllipse(Brushes.Orange,
+                            new Rectangle(food.X * Settings.Width,
+                                 food.Y * Settings.Height, Settings.Width, Settings.Height));
+                    }
+                    else
+                    {
+                        //Draw Food
+                        canvas.FillEllipse(Brushes.Red,
+                            new Rectangle(food.X * Settings.Width,
+                                 food.Y * Settings.Height, Settings.Width, Settings.Height));
+                    }
 
                 }
             }
@@ -198,39 +207,44 @@ namespace Snake
 
         private void Eat()
         {
-            //Add circle to body
-            Circle circle = new Circle
+            if (Settings.Score >= 250)
             {
-                X = Snake[Snake.Count - 1].X,
-                Y = Snake[Snake.Count - 1].Y
-            };
-            Snake.Add(circle);
+                //Add circle to body
+                Circle circle = new Circle
+                {
+                    X = Snake[Snake.Count - 1].X,
+                    Y = Snake[Snake.Count - 1].Y
+                };
+                Snake.Add(circle);
+                Snake.Add(circle);
 
-            //Update Score
-            Settings.Score += Settings.Points;
-            lblScore.Text = Settings.Score.ToString();
+                //Update Score
+                Settings.Score += Settings.Points * 2;
+                lblScore.Text = Settings.Score.ToString();
 
-            GenerateFood();
+                GenerateFood();
+            }
+            else
+            {
+                //Add circle to body
+                Circle circle = new Circle
+                {
+                    X = Snake[Snake.Count - 1].X,
+                    Y = Snake[Snake.Count - 1].Y
+                };
+                Snake.Add(circle);
+
+                //Update Score
+                Settings.Score += Settings.Points;
+                lblScore.Text = Settings.Score.ToString();
+
+                GenerateFood();
+            }
         }
 
         private void Die()
         {
             Settings.GameOver = true;
-        }
-
-        private void PbCanvas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblGameOver_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

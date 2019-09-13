@@ -120,4 +120,11 @@
   <metadata name="gameTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="updates.Text" xml:space="preserve">
+    <value>Adjusted game space to allow playing on smaller screens.
+Reformatted a few things.
+Nerfed point increase to 50.
+Getting 250 points buffs food.
+Food color changed from orange to red so they resemble apples.</value>
+  </data>
 </root>

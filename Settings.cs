@@ -24,7 +24,7 @@
             Height = 16;
             Speed = 16;
             Score = 0;
-            Points = 100;
+            Points = 50;
             GameOver = false;
             direction = Direction.Down;
         }
